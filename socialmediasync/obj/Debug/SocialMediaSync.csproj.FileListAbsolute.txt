@@ -1,0 +1,13 @@
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\SocialMediaSync.exe.config
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\SocialMediaSync.exe
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\SocialMediaSync.pdb
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\obj\Debug\SocialMediaSync.csprojResolveAssemblyReference.cache
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\obj\Debug\SocialMediaSync.exe
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\obj\Debug\SocialMediaSync.pdb
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\Newtonsoft.Json.dll
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\System.Net.Http.Extensions.dll
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\System.Net.Http.Primitives.dll
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\Newtonsoft.Json.xml
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\System.Net.Http.Extensions.xml
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\bin\Debug\System.Net.Http.Primitives.xml
+C:\Code\HRMOnline-MobileApp\SocialMediaSync\obj\Debug\SocialMediaSync.csproj.App.config

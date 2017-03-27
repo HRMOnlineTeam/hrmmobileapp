@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+
+        .selectedRow{
+            background-color:gray;
+        }
+
+        .selectedSeat{
+            background-color:blue;
+            font-weight:bold;
+            font-size:large;
+        }
+
+        .emptySeat{
+            border-color:blue;border-style:dotted;border-width:1px;
+        }
+
+        .maleSeat{
+            background-color:red;border-color:red;border-style:dotted;border-width:1px;
+        }
+
+        .femaleSeat{
+            background-color:greenyellow;border-color:greenyellow;border-style:dotted;border-width:1px;
+        }
+
+        .boySeat{
+            background-color:greenyellow;border-color:greenyellow;border-style:dotted;border-width:1px;background-color:mediumpurple;border-color:mediumpurple;border-style:dotted;border-width:1px;
+        }
+
+        .girlSeat{
+            background-color:deepskyblue;border-color:deepskyblue;border-style:dotted;border-width:1px;
+        }
+
+        .center {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-content: stretch;
+            -ms-flex-line-pack: stretch;
+            align-content: stretch;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+    </style>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!--For users deploying their apps to Windows 8.1 or Android Gingerbread, platformOverrided.js
+    will inject platform-specific code from the /merges folder -->
+    <script src="js/platformOverrides.js"></script>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- angular cordova js -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+    <!-- plugin fix js -->
+    <!-- <script src="cordova_plugins.js"></script> -->
+
+    <script src="cordova.js"></script>
+
+    <!-- image cache js -->
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="lib/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
+    <script src="lib/ionic-cache-src/ionic-cache-src.js"></script>
+
+    <!--Firebase js-->
+    <script src="js/angularfire.min.js"></script>
+    <script src="js/firebase.js"></script>
+    <script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyD8J9LLQo5GsFlBWz5cC7mKl22Cyq8IE_4",
+			authDomain: "hrmonlineapp.firebaseapp.com",
+			databaseURL: "https://hrmonlineapp.firebaseio.com",
+			storageBucket: "hrmonlineapp.appspot.com",
+			messagingSenderId: "397298041061"
+		};
+
+		firebase.initializeApp(config);
+    </script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+</head>
+<body ng-app="app" ng-controller="mainCtrl" class="platform-android platform-cordova platform-webview">
+
+    <div>
+        <ion-side-menus>
+            <ion-side-menu-content drag-content="false">
+                <ion-nav-bar class="bar-positive">
+                    <ion-nav-buttons side="left" class="has-header">
+                        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                    </ion-nav-buttons>
+                    <ion-nav-buttons side="right" class="has-header">
+                        <button class="button button-icon button-clear ion-ios-chatboxes" ng-click="openNotifications()"> {{notificationCount}} </button>
+                    </ion-nav-buttons>
+                </ion-nav-bar>
+                <ion-nav-view></ion-nav-view>
+            </ion-side-menu-content>
+            <ion-side-menu side="left">
+                <ion-header-bar class="bar-positive">
+                    <div class="title">Menu</div>
+                </ion-header-bar>
+                <ion-content ng-controller="menuCtrl" padding="true" class="side-menu-left has-header">
+                    <ion-list>
+                        <ion-item class="item-divider"> Personal</ion-item>
+                    </ion-list>
+                    <a ui-sref="myProfile" menu-close="" class="button button-stable button-small button-block icon-left ion-person">My Profile</a>
+                    <a ui-sref="notifications" menu-close="" class="button button-stable button-small button-block icon-left ion-android-notifications">Notifications</a>
+                    <a ui-sref="myMedia" menu-close="" class="button button-stable button-small button-block icon-left ion-android-download">Downloads</a>
+                    <ion-list>
+                        <ion-item class="item-divider"> *Internal*</ion-item>
+                    </ion-list>
+                    <a ui-sref="headcount" menu-close="" class="button button-stable button-small button-block icon-left ion-person-stalker">Head Count</a>
+                    <a ui-sref="checkin" menu-close="" class="button button-stable button-small button-block icon-left ion-clipboard">Check-In</a>
+                    <ion-list>
+                        <ion-item class="item-divider"> System</ion-item>
+                    </ion-list>
+                    <button class="button button-stable button-small button-block icon-left ion-ios-settings">Settings</button>
+                    <a ui-sref="aboutus" menu-close="" class="button button-stable button-small button-block icon-left ion-information-circled">About</a>
+                    <button class="button button-stable button-small button-block icon-left ion-close-round">Exit</button>
+                </ion-content>
+            </ion-side-menu>
+        </ion-side-menus>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿<ion-view view-title="Notifications" ng-controller="notificationsCtrl">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-chevron-left" ng-click="goBack()">
+            Back
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="notification in notifications" type="item-text-wrap">
+                <img ng-src="{{notification.imgsrc}}">
+                <div ng-bind-html="notification.description"></div>
+                <p>{{notification.timestamp}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

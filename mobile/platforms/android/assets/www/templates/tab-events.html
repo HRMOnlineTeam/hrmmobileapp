@@ -1,0 +1,19 @@
+﻿<ion-view view-title="Events" ng-controller="eventsCtrl">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item class="item-divider"> Upcoming Events</ion-item>
+            <ion-item class="item-thumbnail-left item-icon-right positive" ng-repeat="event in fbEvents">
+                <img src="{{event.cover.source}}">
+                <h2positive>
+                    {{event.name}}
+                    <p>{{event.start_time}} - {{event.end_time}}</p>
+                    <i class="icon ion-bookmark"></i>
+                    <ion-option-button class="button-assertive">Ignore</ion-option-button>
+                    <ion-option-button class="button-balanced">Going</ion-option-button>
+                    <ion-option-button class="button-energized">Interested</ion-option-button>
+                </h2positive>
+            </ion-item>
+            
+        </ion-list>
+    </ion-content>
+</ion-view>

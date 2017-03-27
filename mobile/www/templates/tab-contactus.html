@@ -1,0 +1,28 @@
+﻿<ion-view view-title="Contact Us" ng-controller="contactUsCtrl">
+    <ion-content class="padding">
+        <div style="text-align:center;" class="show-list-numbers-and-dots">
+            <p style="color:#000000;">
+                How can we help
+                <strong>You</strong>
+            </p>
+        </div>
+        <button class="button button-calm button-small button-block icon-left ion-android-add-circle" ng-click="openForm('prayer')">I need Prayer</button>
+        <button class="button button-balanced button-small button-block icon-left ion-android-bulb" ng-click="openForm('counselling')">I need Councelling</button>
+        <button class="button button-calm button-small button-block icon-left ion-heart" ng-click="openForm('newlife')">I want to commit my life to Christ</button>
+        <button class="button button-assertive button-small button-block icon-left ion-android-hand" ng-click="openForm('member')">I want to become a Member</button>
+        <button class="button button-energized button-small button-block icon-left ion-flame" ng-click="openForm('babtism')">I want to be Baptized</button>
+        <button class="button button-royal button-small button-block icon-left ion-android-walk" ng-click="openForm('serve')">I want to Serve</button>
+        <button class="button button-calm button-small button-block icon-left ion-chatbubble-working" ng-click="openForm('question')">I have a Question</button>
+
+        <div class="spacer" style="height: 20px;"></div>
+        <div id="contactUs-markdown28" class="show-list-numbers-and-dots">
+            <p style="color:#000000;">
+                Visit us at one of our
+                <strong>Campuses</strong>
+            </p>
+        </div>
+
+        <button class="button button-balanced button-block icon-left ion-location" ui-sref="campuses">Campuses</button>
+
+    </ion-content>
+</ion-view>

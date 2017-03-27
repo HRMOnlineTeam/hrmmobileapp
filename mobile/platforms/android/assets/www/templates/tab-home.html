@@ -1,0 +1,29 @@
+﻿<ion-view view-title="Home" ng-controller="homeCtrl">
+    
+    <ion-content class="padding">
+       
+        <div class="list card" ng-repeat="post in fbPosts">
+            <div ng-show="(post.message)">
+                <ion-item class="item-icon-left">
+                    <i class="icon ion-social-facebook"></i>{{post.from.name}}
+                </ion-item>
+                <div class="show-list-numbers-and-dots">
+                    <p style="color:#000000;">
+                        {{post.message}}
+                    </p>
+                </div>
+                <div ng-show="post.type == 'video'" style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;">
+                    <iframe src="{{post.link}}" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+                <div ng-show="post.type == 'photo'" class="item item-image">
+                    <img src="{{post.full_picture}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+                </div>
+                <div class="button-bar">
+                    <button class="button button-stable  button-block">Share</button>
+                    <button class="button button-stable  button-block">Comment</button>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!--For users deploying their apps to Windows 8.1 or Android Gingerbread, platformOverrided.js
+    will inject platform-specific code from the /merges folder -->
+    <script src="js/platformOverrides.js"></script>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-app="app">
+    <div class="bar bar-header bar-positive">
+        <button class="button icon ion-navicon"></button>
+        <h1 class="title">Home</h1>
+        <button class="button icon ion-home"></button>
+    </div>
+    <div class="bar bar-subheader bar-stable">
+        <h2 class="title">Feed</h2>
+    </div>
+
+    <div class="tabs-striped tabs-background-positive tabs-color-light has-subheader">
+        <div class="tabs tabs-icon-top has-subheader">
+            <a class="tab-item">
+                <i class="icon ion-home"></i>
+                Feeds
+            </a>
+            <a class="tab-item">
+                <i class="icon ion-star"></i>
+                Annoucements
+            </a>
+            <a class="tab-item">
+                <i class="icon ion-planet"></i>
+                Stuff
+            </a>
+        </div>
+    </div>
+
+    <ion-content ng-controller="homeCtrl" class="padding has-subheader has-footer">
+        <br />
+        <br />
+        <br />
+
+        <div class="button-bar">
+            <a class="button icon ion-navicon button-positive"></a>
+            <a class="button icon ion-home button-positive"></a>
+            <a class="button icon ion-star button-positive"></a>
+            <a class="button icon ion-checkmark-round button-positive"></a>
+        </div>
+
+        <br />
+
+        <button class="button">Action Sheet Button</button>
+
+        <br />
+
+        <div class="button button-block padding">Padding</div>
+        <div class="button button-block">Padding</div>
+
+        <br />
+
+        <div style="font-size:50px;">
+            <i class="icon ion-happy-outline"></i>
+            <i class="icon ion-star"></i>
+            <i class="icon ion-compass"></i>
+            <i class="icon ion-planet"></i>
+        </div>
+        
+        <br />
+        
+        <div class="row responsive-sm">
+            <div class="col col-25">Col 1</div>
+            <div class="col">Col 2</div>
+            <div class="col">Col 3</div>
+            <div class="col">Col 4</div>
+            <div class="col">Col 5</div>
+        </div>
+
+        <div class="row responsive-sm">
+            <div class="col">Col 1</div>
+            <div class="col">Col 2</div>
+            <div class="col">Col 3</div>
+        </div>
+
+        <br />
+
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Select Stuff
+            </div>
+            <select>
+                <option>Option 1</option>
+                <option selected>Option 2</option>
+                <option>Option 3</option>
+            </select>
+        </label>
+
+        <label class="item item-input item-select item-royal">
+            <div class="input-label">
+                Select Stuff
+            </div>
+            <select>
+                <option>Option 1</option>
+                <option selected>Option 2</option>
+                <option>Option 3</option>
+            </select>
+        </label>
+
+        <br />
+
+        <div class="item range">
+            <input type="range" name="range1" />
+        </div>
+
+        <div class="item range">
+            <i class="icon ion-volume-low"></i>
+            <input type="range" name="volume" />
+            <i class="icon ion-volume-high"></i>
+        </div>
+
+
+        <div class="item range range-assertive">
+            <input type="range" name="volume">
+        </div>
+
+        <div class="item range range-royal">
+            <input type="range" name="volume">
+        </div>
+
+        <div class="item range range-dark">
+            <input type="range" name="volume">
+        </div>
+        <br />
+
+        <div class="list">
+            <div class="item item-divider">
+                Group 1
+            </div>
+            <label class="item item-radio">
+                <input type="radio" name="group1">
+                <div class="item-content">
+                    Choice 1
+                </div>
+                <i class="icon radio-icon ion-checkmark"></i>
+            </label>
+
+            <label class="item item-radio">
+                <input type="radio" name="group1">
+                <div class="item-content">
+                    Choice 2
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <div class="item item-divider">
+                Group 2
+            </div>
+            <label class="item item-radio">
+                <input type="radio" name="group2">
+                <div class="item-content">
+                    Choice 1
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+
+            <label class="item item-radio">
+                <input type="radio" name="group2">
+                <div class="item-content">
+                    Choice 2
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+
+        </div>
+
+        <br />
+        <label class="checkbox checkbox-assertive">
+            <input type="checkbox" />
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" />
+        </label>
+
+        <br />
+
+        <ul class="list">
+            <li class="item item-checkbox">
+                Checkbox 1
+                <label class="checkbox checkbox-balanced">
+                    <input type="checkbox" />
+                </label>
+            </li>
+            <li class="item item-checkbox">
+                Checkbox 2
+                <label class="checkbox checkbox-calm">
+                    <input type="checkbox" />
+                </label>
+            <li class="item item-checkbox">
+                Checkbox 3
+                <label class="checkbox">
+                    <input type="checkbox" />
+                </label>
+            </li>
+        </ul>
+
+        <br />
+        <label class="toggle">
+            <input type="checkbox" />
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+        <br />
+
+        <ul class="list">
+            <li class="item item-toggle">
+                Toggle 1
+                <label class="toggle toggle-positive">
+                    <input type="checkbox" />
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Toggle 2
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" />
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Toggle 3
+                <label class="toggle toggle-energized">
+                    <input type="checkbox" />
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </ul>
+
+        <div class="list">
+            
+            <label class="item item-input">
+                <input type="text" placeholder="Enter text here..." />
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Enter more here..." />
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Label</span>
+                <input type="text" placeholder="Enter text here..." />
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Label</span>
+                <input type="text" placeholder="Enter text here..." />
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Label 1</span>
+                <input type="text" placeholder="Enter text here..." />
+            </label>
+            <div class="item item-input-inset">
+                <label class="item item-input-wrapper">
+                    <input type="text" placeholder="Placeholder 1" />
+                </label>
+                <button class="button">Button</button>
+            </div>
+            <div class="item item-input-inset">
+                <label class="item item-input-wrapper">
+                    <i class="icon ion-edit placeholder-icon"></i>
+                    <input type="text" placeholder="Placeholder 2" />
+                </label>
+            </div>
+
+        </div>
+        
+        <div class="list list-inset">
+            <div class="item item-divider">Positive</div>
+            <div class="item item-icon-left">
+                <i class="icon ion-home"></i>
+                Item 1
+            </div>
+            <div class="item item-icon-right">
+                <i class="icon ion-star"></i>
+                Item 2
+            </div>
+            <div class="item item-icon-left item-icon-right">
+                <i class="icon ion-home"></i>
+                <i class="icon ion-star"></i>
+                Item 3
+            </div>
+            <div class="item item-divider">Negative</div>
+            <div class="item item-icon-left">
+                <i class="icon ion-checkmark-round"></i>
+                <span class="text-note">Item 1</span>
+            </div>
+            <div class="item item-avatar">
+                <img src="/img/ionic.png" />
+                <h3>Item 2</h3>
+            </div>
+            <div class="item item-thumbnail-left">
+                <img src="/img/ionic.png" />
+                <h3>Item 3</h3>
+            </div>
+        </div>
+
+        <div class="card list">
+            <div class="item item-divider">Card Header</div>
+            <div class="item">
+                This is a ionic card without item-text-wrap class.
+            </div>
+            <div class="item item-text-wrap">
+                This is a ionic card without item-text-wrap class.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-avatar">
+                <img src="img/ionic.png" />
+                <h2>Card Name</h2>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" src="img/ionic.png" />
+                <div class="item-text-wrap">
+                    This is some card infomation that will be shown as part of the whole card thingy that we use in the app
+                </div>
+            </div>
+        </div>
+        
+    </ion-content>
+    <div class="bar bar-footer bar-positive">
+        <button class="button icon ion-navicon"></button>
+        <button class="button icon ion-home"></button>
+        <button class="button icon ion-star"></button>
+        <button class="button icon ion-checkmark-round pull-right"></button>
+    </div>
+</body>
+</html>
